@@ -20,13 +20,14 @@ from django.urls import path
 from prison import views
 
 urlpatterns = [
-    path('',views.Master,name='Master'),
+path('warden/details/<int:warden_id>', views.WardenDetails, name='WardenDetails'),
 # path('add/warden',views.AddWarden,name='AddWarden'),
     path('Add/Warden',views.AddWarden,name='AddWarden'),
     # path('see/warden',views.Wardens,name='Wardens'),
-    path('warden/view',views.Wardens,name='Wardens'),
+    path('',views.Wardens,name='Wardens'),
 path('Wardens/delete/<int:warden_id>', views.DeleteWarden, name='DeleteWarden'),
 path('Wardens/update/<int:warden_id>', views.UpdateWarden, name='UpdateWarden'),
+
     path('admin/', admin.site.urls),
 
 ]

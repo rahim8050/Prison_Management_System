@@ -32,6 +32,9 @@
               <a class="btn btn-primary" href="{% url 'UpdateWarden' warden.id %}">Update</a>
           </td>
           <td>
+             <a class="btn btn-success" href="{% url 'WardenDetails' warden.id %}">Details</a>
+          </td>
+          <td>
 {#              <a class="btn btn-primary" href="{% url '#' warden.id %}">Details</a>#}
           </td>
 {#          	<td>#}
@@ -65,5 +68,5 @@
             </div>
         </div>
 </div>
-
+{# <img class="rounded-circle" src="{% static 'images/kamiti.jpeg' %}" >#}
 {% endblock %}

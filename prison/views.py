@@ -3,15 +3,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from  django.http import HttpResponse
 
 from prison.apps_forms import WardenForm
-from prison.models import Warden
+from prison.models import Warden, Armoury
 
 
 # Create your views here.
 
 
 
-def Master(request):
-    return render (request, 'Master.html')
 
 def AddWarden(request):
         if request.method == 'POST':
@@ -45,3 +43,11 @@ def UpdateWarden(request, warden_id):
         if form.is_valid():
             form.save()
             return redirect('Wardens')
+    else:
+        form = WardenForm(instance=warden)
+    return render(request, 'WardenUpdateForm.html', {"form": form})
+
+def WardenDetails(request, warden_id):
+    warden = Warden.objects.get(id=warden_id)
+    armoury = Armoury.objects.filter(Warden=warden_id)
+    return render(request, "WardenDetails.html", {"armoury": armoury, "warden": warden})
