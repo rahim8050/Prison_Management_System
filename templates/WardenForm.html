@@ -1,0 +1,18 @@
+{% extends 'Master.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+	<title>Warden</title>
+{% endblock %}
+{% block content %}
+	<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+             <form class="border px-3 py-2 mt-3" action="{% url 'AddWarden' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 {{ form  }}
+                 <button class="btn btn-dark w-100">Save Warden </button>
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

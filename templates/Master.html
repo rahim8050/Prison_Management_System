@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        legend{
+            font-weight: 1rem;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'Css/widgets.css' %}">
+    {% block title %}
+    	<title>master</title>
+    {% endblock %}
+    
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">umoja sacco</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Wardens' %}">Wardens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">statistcs</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="{% url 'AddWarden' %}">Add WArden</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">transaction</a>
+        </li>
+           <li class="nav-item">
+{#          <a class="nav-link" href="">Add Warden</a>#}
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{% block content %}
+
+ {% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
