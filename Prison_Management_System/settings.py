@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prison.apps.PrisonConfig',
     'crispy_forms',
-    'crispy_bootstrap5',
+    'crispy_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -124,7 +124,15 @@ STATIC_ROOT = BASE_DIR / 'Static_Files'
 
 STATICFILES_DIRS = [BASE_DIR / 'prison/static']
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

@@ -1,5 +1,5 @@
 {% extends 'Master.html' %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
 {% block title %}
 	<title>Update customer</title>
 {% endblock %}
@@ -9,7 +9,7 @@
         <div class="col-sm-4">
              <form class="border px-3 py-2 mt-3" action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                 {{ form }}
+                 {{ form | crispy  }}
                  <button class="btn btn-dark w-100">Update customer </button>
             </form>
         </div>

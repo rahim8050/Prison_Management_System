@@ -2,16 +2,19 @@
 {% load crispy_forms_tags %}
 {% load crispy_forms_filters %}
 {% block title %}
-	<title>Warden</title>
+	<title>Armoury</title>
 {% endblock %}
 {% block content %}
 	<div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-4">
-             <form class="border px-3 py-2 mt-3" action="{% url 'AddWarden' %}" method="post" enctype="multipart/form-data">
+                 <h3>Names : {{ warden.FirstName }} {{ warden.LastName }}</h3>
+            <p>Email: {{ warden.Email }}</p>
+                <p>Joining Date:  {{ warden.created_at | date:"d-m-Y" }}</p>
+             <form class="border px-3 py-2 mt-3" action="" method="POST" >
                 {% csrf_token %}
                  {{ form | crispy }}
-                 <button class="btn btn-dark w-100">Save Warden </button>
+                 <button class="btn btn-dark w-100">Save Armoury </button>
             </form>
         </div>
     </div>

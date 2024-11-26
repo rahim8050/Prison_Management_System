@@ -15,6 +15,7 @@
         <th>remove</th>
         <th>update</th>
         <th>Details</th>
+        <th>Armoury</th>
         
     </tr>
    {% for warden in data.object_list %}
@@ -33,6 +34,9 @@
           </td>
           <td>
              <a class="btn btn-success" href="{% url 'WardenDetails' warden.id %}">Details</a>
+          </td>
+             <td>
+             <a class="btn btn-info" href="{% url 'Armoury' warden.id %}">Armoury</a>
           </td>
           <td>
 {#              <a class="btn btn-primary" href="{% url '#' warden.id %}">Details</a>#}

@@ -39,9 +39,28 @@
                 </tr>
             </table>
         </div>
-{#            <div class="col-sm-4">#}
-{#                <img src="{% static 'images/ims.jpeg' %}" alt="">#}
-{#            </div>#}
+            <div class="col-sm-4">
+                {% if warden.ProfilePicture %}
+                     <img class="img-fluid mx-auto d-block profile" src="{{ warden.ProfilePicture.url }}" alt="">
+                {% else %}
+              <img class="img-fluid mx-auto d-block profile" src="{% static 'default.png' %}" alt="">
+                {% endif %}
+            </div>
+     <div class="col-sm-4">
+               <p>Armoury</p>
+               <table class="table table-striped">
+                   <tr>
+                     
+                       <th>GunModel</th>
+                       <th>Status</th>
+                   </tr>
+                   {% for Armo in Armoury %}
+                       <tr>
+                           <td>{{ Armo.created_at | date:"d-m-Y" }}</td>
+                           <td>{{ Armo.GunModel }}</td>
+                           <td>{{ Armo.status }}</td>
+                       </tr>
+                   {% endfor %}
 {#       <div class="col-sm-4">#}
 {#               <p>Deposits</p>#}
 {#               <table class="table table-striped">#}
@@ -59,6 +78,16 @@
 {#                   {% endfor %}#}
                </table>   
         </div>
+    
+{#      <div class="col-sm-4">#}
+{#               <p class="text-center">Profile Picture</p>#}
+{#               {% if warden.profile_pic %}#}
+{#               	 <img class="img-fluid mx-auto d-block profile" src="{{ warden.profile_pic.url }}" alt="">#}
+{#               {% else %}#}
+{#               	 <img class="img-fluid mx-auto d-block profile" src="{% static 'default.png' %}" alt="">#}
+{#               {% endif %} #}
+{#              #}
+{#           </div>#}
     </div>
   
 {% endblock %}
