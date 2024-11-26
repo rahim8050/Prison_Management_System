@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.paginator import EmptyPage, Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
@@ -17,6 +18,7 @@ def AddWarden(request):
             form = WardenForm(request.POST,request.FILES)
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Your warden has been added.')
                 return redirect('Wardens')
         else:
             form = WardenForm()
@@ -35,6 +37,7 @@ def Wardens(request):
 def  DeleteWarden(request, warden_id):
         warden = Warden.objects.get(id=warden_id)  # select * from Warden table  where id=??
         warden.delete()  # delete from Warden where id = ??
+        messages.info(request, f"Warden {warden.FirstName} was deleted")
         return redirect('Wardens')
 
 def UpdateWarden(request, warden_id):
@@ -43,6 +46,7 @@ def UpdateWarden(request, warden_id):
         form = WardenForm(request.POST,request.FILES, instance=warden)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your warden has been updated.')
             return redirect('Wardens')
     else:
         form = WardenForm(instance=warden)
