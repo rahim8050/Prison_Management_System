@@ -5,6 +5,7 @@ from django.core.paginator import EmptyPage, Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from  django.http import HttpResponse
+from django.template.context_processors import request
 
 from prison.apps_forms import WardenForm, ArmouryForm, LoginForm
 from prison.models import Warden, Armoury
@@ -107,7 +108,6 @@ def login_user(request):
                 return redirect('Wardens')
         messages.error(request, 'Invalid username or password.')
         return render(request, 'LogInForm.html', {"form": form})
-
 
 
 

@@ -33,6 +33,7 @@ path('Wardens/update/<int:warden_id>', views.UpdateWarden, name='UpdateWarden'),
 path('Warden/search',views.SearchWarden,name='SearchWarden'),
 path('login/',views.login_user,name='login'),
 path('logout/',views.signout_user,name='logout'),
+
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
