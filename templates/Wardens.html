@@ -26,15 +26,22 @@
                   <td>{{ warden.LastName }}</td>
                   <td>{{ warden.Email }}</td>
                   <td>{{ warden.created_at }}</td>
+         {% if request.user.has_perm %}
          <td>
              <a class="btn btn-danger" href="{% url 'DeleteWarden' warden.id %}">Remove</a>
          </td>
+         {% endif %}
+       {% if request.user.has_perm %}
           <td>
               <a class="btn btn-primary" href="{% url 'UpdateWarden' warden.id %}">Update</a>
           </td>
-          <td>
+      {% endif %}
+      
+{#       {% if request.user.has_perm %}#}
+          <td> 
              <a class="btn btn-success" href="{% url 'WardenDetails' warden.id %}">Details</a>
           </td>
+{#      {% endif %}#}
              <td>
              <a class="btn btn-info" href="{% url 'Armoury' warden.id %}">Armoury</a>
           </td>
