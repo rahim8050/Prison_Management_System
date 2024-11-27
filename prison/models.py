@@ -43,7 +43,7 @@ class Armoury(models.Model):
         return f"{self.Warden.FirstName} {self.GunModel}"
 
     class Meta:
-        db_table = 'Armoury'
+        db_table = 'armoury'
 
 # python3 manage.py makemigrations
 # python3 manage.py migrate

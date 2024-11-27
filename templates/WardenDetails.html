@@ -50,15 +50,15 @@
                <p>Armoury</p>
                <table class="table table-striped">
                    <tr>
-                     
+                     <th>Created at</th>
                        <th>GunModel</th>
-                       <th>Status</th>
+                       
                    </tr>
-                   {% for Armo in Armoury %}
+                   {% for A in armoury %}
                        <tr>
-                           <td>{{ Armo.created_at | date:"d-m-Y" }}</td>
-                           <td>{{ Armo.GunModel }}</td>
-                           <td>{{ Armo.status }}</td>
+                           <td>{{ A.created_at | date:"d-m-Y" }}</td>
+                           <td>{{ A.GunModel }}</td>
+{#                           <td>{{ Armos.status }}</td>#}
                        </tr>
                    {% endfor %}
 {#       <div class="col-sm-4">#}
