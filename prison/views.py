@@ -116,3 +116,7 @@ def login_user(request):
 def signout_user(request):
     logout(request)
     return redirect('login')
+
+
+def about(request):
+    return render(request,'about.html')

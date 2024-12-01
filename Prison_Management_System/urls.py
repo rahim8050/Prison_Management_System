@@ -33,6 +33,7 @@ path('Wardens/update/<int:warden_id>', views.UpdateWarden, name='UpdateWarden'),
 path('Warden/search',views.SearchWarden,name='SearchWarden'),
 path('login/',views.login_user,name='login'),
 path('logout/',views.signout_user,name='logout'),
+    path('about',views.about,name='about'),
 
     path('admin/', admin.site.urls),
 

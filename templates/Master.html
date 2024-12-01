@@ -21,7 +21,7 @@
 
  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">Kamiti prison sacco
+    <a class="navbar-brand" href="">Kamiti Prison Mangement System
         <img class="rounded-circle logos" src="{% static 'images/kamiti.jpeg' %}" >
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -38,11 +38,11 @@
            <li class="nav-item">
           <a class="nav-link" href="{% url 'AddWarden' %}">Add WArden</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">transaction</a>
-        </li>
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="">transaction</a>#}
+{#        </li>#}
            <li class="nav-item">
-{#          <a class="nav-link" href="{% url 'About' %}">About</a>#}
+          <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
       </ul>
       <form class="d-flex" method="get" action="{% url 'SearchWarden' %}">

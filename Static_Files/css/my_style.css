@@ -8,3 +8,24 @@ font-family: "Tinos", serif;
   width: 15%;
   height: 15%;
 }
+about{
+	margin-left: 90px;
+}
+.about us{
+   width:100%;
+   border-radius: 7px;
+
+}
+.us{
+display: block;
+float: left;
+width: 40%;
+ padding: 10px;
+
+}
+.us p{
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size:15px;
+}

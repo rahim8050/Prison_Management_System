@@ -1,0 +1,31 @@
+{% extends "Master.html" %}
+
+{% block title %}
+    <title>issue a gun</title>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6 justify-content-center">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Gun {{ house.name }} by {{ house.door_no }}</h6>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'issue_gun'  %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="input_id" class="form-label">Select Gun</label>
+                            <select id="input_id" class="form-select" name="h.id" aria-label="Default select example">
+                                {% for h in housed %}
+                                    <option value="{{ h.id }}">  {{ h.house_no }}  {{ h.name }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">issue gun</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
