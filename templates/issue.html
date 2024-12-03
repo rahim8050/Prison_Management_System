@@ -8,7 +8,7 @@
         <div class="col-sm-6 justify-content-center">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Gun {{ house.name }} by {{ house.door_no }}</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Gun {{ Warden.GunModel }} by {{ warden.status }}</h6>
                 </div>
                 <div class="card-body">
                     <form action="{% url 'issue_gun'  %}" method="post">
@@ -16,8 +16,8 @@
                         <div class="mb-3">
                             <label for="input_id" class="form-label">Select Gun</label>
                             <select id="input_id" class="form-select" name="h.id" aria-label="Default select example">
-                                {% for h in housed %}
-                                    <option value="{{ h.id }}">  {{ h.house_no }}  {{ h.name }}</option>
+                                {% for w in wars %}
+                                    <option value="{{ w.id }}">  {{ w.Email }}  {{ w.Gender }}</option>
                                 {% endfor %}
 
                             </select>

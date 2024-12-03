@@ -120,3 +120,10 @@ def signout_user(request):
 
 def about(request):
     return render(request,'about.html')
+
+
+def issue(request,id):
+    wars = Warden.objects.filter(id=id)
+
+
+    return render(request,'issue.html',{"wars": wars})

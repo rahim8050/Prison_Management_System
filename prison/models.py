@@ -45,6 +45,7 @@ class Armoury(models.Model):
     class Meta:
         db_table = 'armoury'
 
+
 # python3 manage.py makemigrations
 # python3 manage.py migrate
 # python manage.py populate
