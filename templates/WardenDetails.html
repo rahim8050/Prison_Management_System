@@ -61,33 +61,11 @@
 {#                           <td>{{ Armos.status }}</td>#}
                        </tr>
                    {% endfor %}
-{#       <div class="col-sm-4">#}
-{#               <p>Deposits</p>#}
-{#               <table class="table table-striped">#}
-{#                   <tr>#}
-{#                       <th>Date</th>#}
-{#                       <th>Amount</th>#}
-{#                       <th>Status</th>#}
-{#                   </tr>#}
-{#                   {% for deposit in deposits %}#}
-{#                       <tr>#}
-{#                           <td>{{ deposit.created_at | date:"d-m-Y" }}</td>#}
-{#                           <td>{{ deposit.amount }}</td>#}
-{#                           <td>{{ deposit.status }}</td>#}
-{#                       </tr>#}
-{#                   {% endfor %}#}
+           
                </table>   
         </div>
     
-{#      <div class="col-sm-4">#}
-{#               <p class="text-center">Profile Picture</p>#}
-{#               {% if warden.profile_pic %}#}
-{#               	 <img class="img-fluid mx-auto d-block profile" src="{{ warden.profile_pic.url }}" alt="">#}
-{#               {% else %}#}
-{#               	 <img class="img-fluid mx-auto d-block profile" src="{% static 'default.png' %}" alt="">#}
-{#               {% endif %} #}
-{#              #}
-{#           </div>#}
+
     </div>
   
 {% endblock %}
