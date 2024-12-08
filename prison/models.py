@@ -3,6 +3,8 @@ import uuid
 
 
 from django.db import models
+from django.db.migrations import swappable_dependency
+
 
 # Create your models here.
 
@@ -44,6 +46,41 @@ class Armoury(models.Model):
 
     class Meta:
         db_table = 'armoury'
+
+class Issuing(models.Model):
+    Gun = models.OneToOneField(Armoury, on_delete=models.CASCADE)
+    status = models.BooleanField(default=True)
+    expected_return_date = models.DateField()
+    return_date = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.Gun
+
+    @property
+    def fine_total(self):
+        if self.return_date and self.expected_return_date and self.return_date > self.expected_return_date:
+            amount = (self.return_date - self.expected_return_date).days * 13
+            return amount
+        return 0
+    class Meta:
+        db_table = 'issuing'
+        verbose_name = 'Issuing'
+        verbose_name_plural = 'Issuings'
+        ordering = ('status', 'expected_return_date')
+
+
+
+class Payment(models.Model):
+    issuing = models.ForeignKey(Issuing, on_delete=models.CASCADE)
+    merchant_request_id = models.CharField(max_length=100)
+    checkout_request_id = models.CharField(max_length=120)
+    code = models.CharField(max_length=50, null=True, blank=True)
+    amount = models.IntegerField(default=0)
+    status = models.CharField(max_length=50, default='PENDING')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
 
 # python3 manage.py makemigrations

@@ -8,7 +8,7 @@ from  django.http import HttpResponse
 from django.template.context_processors import request
 
 from prison.apps_forms import WardenForm, ArmouryForm, LoginForm
-from prison.models import Warden, Armoury
+from prison.models import Warden, Armoury, Issuing
 
 
 # Create your views here.
@@ -123,7 +123,7 @@ def about(request):
 
 
 def issue(request,id):
-    wars = Warden.objects.filter(id=id)
+    issue = Issuing.objects.filter(id=id)
 
 
-    return render(request,'issue.html',{"wars": wars})
+    return render(request,'issue.html',{"issue": issue})

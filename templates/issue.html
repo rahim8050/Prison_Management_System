@@ -15,9 +15,9 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="input_id" class="form-label">Select Gun</label>
-                            <select id="input_id" class="form-select" name="h.id" aria-label="Default select example">
-                                {% for w in wars %}
-                                    <option value="{{ w.id }}">  {{ w.Email }}  {{ w.Gender }}</option>
+                            <select id="input_id" class="form-select" name="issue.id" aria-label="Default select example">
+                                {% for iss in issue %}
+                                    <option value="{{ iss.id }}">  {{ iss.Email }}  {{ iss.Gender }}</option>
                                 {% endfor %}
 
                             </select>
