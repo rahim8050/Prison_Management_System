@@ -123,7 +123,8 @@ def about(request):
 
 
 def issue(request,id):
-    issue = Issuing.objects.filter(id=id)
+    issue = Issuing.objects.filter(pk=id)
+
 
 
     return render(request,'issue.html',{"issue": issue})
