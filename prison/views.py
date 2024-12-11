@@ -122,9 +122,8 @@ def about(request):
     return render(request,'about.html')
 
 
-def issue(request,id):
-    issue = Issuing.objects.filter(pk=id)
 
 
 
-    return render(request,'issue.html',{"issue": issue})
+def contact(request):
+    return render(request,'contact.html')

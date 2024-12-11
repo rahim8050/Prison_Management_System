@@ -1,5 +1,7 @@
 {% extends 'Master.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
 {% block title %}
 	<title>About</title>
 {% endblock %}
@@ -9,29 +11,29 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1 class="h1"   >Who we Are</h1>
-                    <img src="{% static 'images/kamiti.jpeg' %}" alt="home is the best">
-                    <h2 class="h2"><b>Our Story</b></h2> 
+                    <img class="rounded" src="{% static 'images/kamiti.jpeg' %}" alt="home is the best">
+                    <h2 class="h2 text-success"><b>Our Story</b></h2> 
                     <p>We seek to transforming citizens of kenya to be a part of our growth with a view to transforming their lives and for the Nation.</p>
                 </div>
                 <div class="col-sm-6">
                     <h3 class="h3">Our Journey</h3>
-                    <img src="{% static 'images/celebration.jpeg' %}" alt="">
+                    <img class="img-thumbnail" src="{% static 'images/celebration.jpeg' %}" alt="">
                     <p>Celebrating over 43 years of transforming lives with a vicinity that’s committed to serving Kenyans. </p>
 
                 </div>
                 <div class="col-sm-6">
                     <h4 class="h4" >Our leadership</h4>
-                    <img src="{% static 'images/cms.jpeg' %}" alt="">
+                    <img class="img-thumbnail" src="{% static 'images/cms.jpeg' %}" alt="">
                     <p>The senior management team is responsible for the daily running of the prison while the Board is responsible for the overall conduct of the prisons’s perfomance.</p>
                 </div>
                 <div class="col-sm-6">
                     <h5 class="h5">Community Impact</h5>
-                    <img src=" {% static 'images/community.jpeg' %}" alt="">
+                    <img class="img-thumbnail" src=" {% static 'images/community.jpeg' %}" alt="">
                     <p>We’re transforming the lives of Kenyans through our participation in community development initiatives that are aimed at pushing financial and personal growth, as part of our enduring commitment to be of service to YOU Kenyans.</p>
                 </div>
                 <div class="col-sm-6">
                     <h6 class="h6">Social Innovation</h6>
-                    <img src="{% static 'images/furniture.jpeg'  %}" alt="">
+                    <img class="img-thumbnail" src="{% static 'images/furniture.jpeg'  %}" alt="">
                     <p>
                         Connecting insights, people and aspirations. We leverage technology use in the solving of society's challenges by creating lasting positive impact.</p>
                 </div>
@@ -39,7 +41,7 @@
                
             </div>
           </section>
-
+       
           
 
      
