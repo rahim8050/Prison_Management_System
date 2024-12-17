@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prison.apps.PrisonConfig',
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+    'emails.apps.EmailsConfig',
+    'profiles.apps.ProfilesConfig'
+
 ]
 
 MIDDLEWARE = [
