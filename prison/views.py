@@ -131,3 +131,8 @@ def contact(request):
 
 def signup(request):
     return render(request,'signup.html')
+
+
+def Armos(request,Gun_id):
+            gun = armoury.objects.all()
+            return render(request,'Wardens.htm',{"gun": gun})

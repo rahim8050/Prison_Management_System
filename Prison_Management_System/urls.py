@@ -36,6 +36,7 @@ path('logout/',views.signout_user,name='logout'),
     path('about',views.about,name='about'),
     path('contact',views.contact, name='contact'),
                   path('signup', views.signup, name='signup'),
+    path('armoury/armoury/<int:Gun_id>', views.Armos, name='Armoury'),
 
     path('admin/', admin.site.urls),
 
