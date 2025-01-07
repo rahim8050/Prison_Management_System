@@ -37,7 +37,7 @@ class Warden(models.Model):
 class Armoury(models.Model):
     GunModel = models.CharField(max_length=10)
     status = models.BooleanField(default=False)
-    Warden = models.ForeignKey(Warden, on_delete=models.CASCADE)
+    Warden = models.ForeignKey(Warden, constrained('wardens'), on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
