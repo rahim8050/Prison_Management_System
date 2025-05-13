@@ -27,6 +27,4 @@ class ArmouryForm(forms.ModelForm):
             'GunModel': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=50)
     password = forms.CharField(widget=forms.PasswordInput)
